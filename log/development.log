@@ -6877,3 +6877,227 @@ WHERE fk.referenced_column_name is not null
   AND fk.table_name = 'users'
 [0m
   [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:56:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>"anything", "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "latitude"=>-19.935905, "longitude"=>-43.932183}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', 'anything', 'andrey', 3184148797, 'received', '2015-09-07 15:56:12', '2015-09-07 15:56:12')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.932183, -19.935905, 'Rua Rio Grande do Norte, 1184 - Savassi, Belo Horizonte - MG, 30130-131, Brazil', 1, '2015-09-07 15:56:12', '2015-09-07 15:56:12')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mAddress Load (1.7ms)[0m  SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 1
+Completed 200 OK in 1509ms (Views: 5.5ms | ActiveRecord: 10.9ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:56:32 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "latitude"=>-19.935905, "longitude"=>-43.922581}]}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:56:32', '2015-09-07 15:56:32')
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.922581, -19.935905, 'Rua Américo Scott, 2-154 - Serra, Belo Horizonte - MG, Brazil', 2, '2015-09-07 15:56:32', '2015-09-07 15:56:32')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 2[0m
+Completed 200 OK in 629ms (Views: 2.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:57:00 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "latitude"=>-19.939547, "longitude"=>-43.919985}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:57:01', '2015-09-07 15:57:01')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.919985, -19.939547, 'Rua do Ouro, 938 - Serra, Belo Horizonte - MG, Brazil', 3, '2015-09-07 15:57:01', '2015-09-07 15:57:01')
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 3
+Completed 200 OK in 676ms (Views: 2.6ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:57:19 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "latitude"=>-19.939814, "longitude"=>-43.919985}]}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:57:20', '2015-09-07 15:57:20')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.919985, -19.939814, 'Rua do Ouro, 891-1007 - Serra, Belo Horizonte - MG, Brazil', 4, '2015-09-07 15:57:20', '2015-09-07 15:57:20')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 4[0m
+Completed 200 OK in 740ms (Views: 2.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:57:31 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "latitude"=>-19.939814, "longitude"=>-43.937743}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:57:32', '2015-09-07 15:57:32')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.937743, -19.939814, 'Avenida Getúlio Vargas, 1621 - Savassi, Belo Horizonte - MG, 30112-020, Brazil', 5, '2015-09-07 15:57:32', '2015-09-07 15:57:32')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 5
+Completed 200 OK in 628ms (Views: 2.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:57:49 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "latitude"=>-19.933202, "longitude"=>-43.937743}]}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:57:50', '2015-09-07 15:57:50')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.937743, -19.933202, 'Praça da Liberdade, 63 - Funcionários, Belo Horizonte - MG, 30140-140, Brazil', 6, '2015-09-07 15:57:50', '2015-09-07 15:57:50')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 6[0m
+Completed 200 OK in 643ms (Views: 1.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:58:08 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.937743, "latitude"=>-19.933202}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:58:09', '2015-09-07 15:58:09')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.937743, -19.933202, 'Praça da Liberdade, 63 - Funcionários, Belo Horizonte - MG, 30140-140, Brazil', 7, '2015-09-07 15:58:09', '2015-09-07 15:58:09')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 7
+Completed 200 OK in 642ms (Views: 1.9ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:58:14 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.937743, "latitude"=>-19.933202}]}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:58:14', '2015-09-07 15:58:14')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.937743, -19.933202, 'Praça da Liberdade, 63 - Funcionários, Belo Horizonte - MG, 30140-140, Brazil', 8, '2015-09-07 15:58:14', '2015-09-07 15:58:14')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 8[0m
+Completed 200 OK in 642ms (Views: 2.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:58:27 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.937743, "latitude"=>-19.9125787}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:58:27', '2015-09-07 15:58:27')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.937743, -19.9125787, 'Rua Célio de Castro, 2-250 - Floresta, Belo Horizonte - MG, Brazil', 9, '2015-09-07 15:58:27', '2015-09-07 15:58:27')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 9
+Completed 200 OK in 651ms (Views: 2.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 12:59:00 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.9222144, "latitude"=>-19.9125787}]}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 15:59:00', '2015-09-07 15:59:00')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.9222144, -19.9125787, 'Rua Pouso Alegre, 1824 - Horto, Belo Horizonte - MG, 31015-184, Brazil', 10, '2015-09-07 15:59:00', '2015-09-07 15:59:00')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 10[0m
+Completed 200 OK in 698ms (Views: 2.3ms | ActiveRecord: 2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35mGroup Load (0.3ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 13:05:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+SyntaxError (/Users/Andrey/Documents/workspace/humanitary/app/controllers/groups_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+      render json: status: :ok
+                          ^):
+  app/controllers/groups_controller.rb:7: syntax error, unexpected ':', expecting keyword_end
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.6ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fa7b9d1d1f8 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fa7b9d1cca8 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fa7b9cfbe90 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 13:05:24 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.9222144, "latitude"=>-19.9125787}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 16:05:25', '2015-09-07 16:05:25')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.9222144, -19.9125787, 'Rua Pouso Alegre, 1824 - Horto, Belo Horizonte - MG, 31015-184, Brazil', 11, '2015-09-07 16:05:25', '2015-09-07 16:05:25')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 833ms (Views: 0.3ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-07 13:06:00 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.9222144, "latitude"=>-19.9125787}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-07 16:06:01', '2015-09-07 16:06:01')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.9222144, -19.9125787, 'Rua Pouso Alegre, 1824 - Horto, Belo Horizonte - MG, 31015-184, Brazil', 12, '2015-09-07 16:06:01', '2015-09-07 16:06:01')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 780ms (Views: 0.2ms | ActiveRecord: 8.4ms)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `fb_user_id`, `created_at`, `updated_at`) VALUES ('andrey.leonardo@gmail.com', '$2a$10$.bi5QoA.MB0KSJfSFY6YjOEKWy4enMFjHfuqvzcJ34VHLZYYtdBC2', 1234, '2015-09-07 21:11:43', '2015-09-07 21:11:43')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+
+
+Started POST "/groups/near_groups?id=1" for ::1 at 2015-09-07 18:13:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by GroupsController#near_groups as */*
+  Parameters: {"id"=>"1"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT addresses.*, NULL AS distance, NULL AS bearing FROM `addresses` WHERE (false)[0m
+Completed 200 OK in 53ms (Views: 1.6ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/groups/near_groups?fb_user_id=1234&longitude=-43.933494&latitude=-19.941485&fb_access_token=1234556" for ::1 at 2015-09-07 18:16:13 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"fb_user_id"=>"1234", "longitude"=>"-43.933494", "latitude"=>"-19.941485", "fb_access_token"=>"1234556"}
+Can't verify CSRF token authenticity
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: near_groups):
+  app/controllers/groups_controller.rb:29:in `permited_params_near_groups'
+  app/controllers/groups_controller.rb:14:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (152.7ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-07 18:19:40 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.933494", "latitude"=>"-19.941485", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35mAddress Load (2.5ms)[0m  SELECT addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.941485 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.941485 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.933494 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.933494) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.941485) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.941485) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.933494) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` WHERE (addresses.latitude BETWEEN -19.986451080295936 AND -19.896518919704064 AND addresses.longitude BETWEEN -43.981328147430396 AND -43.88565985256961 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.941485 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.941485 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.933494 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 5)  ORDER BY distance ASC
+Completed 200 OK in 41ms (Views: 12.4ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-07 18:20:19 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.933494", "latitude"=>"-19.941485", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.941485 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.941485 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.933494 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.933494) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.941485) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.941485) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.933494) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` WHERE (addresses.latitude BETWEEN -19.95047821605919 AND -19.93249178394081 AND addresses.longitude BETWEEN -43.94306082948608 AND -43.92392717051393 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.941485 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.941485 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.933494 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 27ms (Views: 7.3ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-07 18:30:51 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `addresses` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 6.5ms)

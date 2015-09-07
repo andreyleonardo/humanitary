@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   
   post 'humanitary_api/create_group' => 'groups#create_group', controller: 'groups'
-  get 'groups/near_groups' => 'groups#near_groups'
+  post 'groups/near_groups' => 'groups#near_groups'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
