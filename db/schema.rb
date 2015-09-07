@@ -26,11 +26,6 @@ ActiveRecord::Schema.define(version: 20150907144802) do
 
   add_index "addresses", ["group_id"], name: "index_addresses_on_group_id", using: :btree
 
-  create_table "group_addresses", id: false, force: :cascade do |t|
-    t.integer "address_id", limit: 4
-    t.integer "group_id",   limit: 4
-  end
-
   create_table "groups", force: :cascade do |t|
     t.string   "group_name",        limit: 255
     t.string   "group_description", limit: 255
