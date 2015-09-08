@@ -7101,3 +7101,309 @@ Processing by GroupsController#near_groups as */*
 Can't verify CSRF token authenticity
   [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `addresses` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
 Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 07:52:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM `addresses` WHERE `addresses`.`status` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Mysql2::Error: Unknown column 'addresses.status' in 'where clause': SELECT COUNT(*) FROM `addresses` WHERE `addresses`.`status` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 6.6ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'addresses.status' in 'where clause': SELECT COUNT(*) FROM `addresses` WHERE `addresses`.`status` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.5ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 07:53:14 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM `addresses` WHERE `addresses`.`state` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+Mysql2::Error: Unknown column 'addresses.state' in 'where clause': SELECT COUNT(*) FROM `addresses` WHERE `addresses`.`state` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 8.5ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'addresses.state' in 'where clause': SELECT COUNT(*) FROM `addresses` WHERE `addresses`.`state` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.0ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 07:54:35 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 5.9ms)
+
+RuntimeError (unknown class: Class):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.8ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 07:55:43 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 5.4ms)
+
+RuntimeError (unknown class: Class):
+  app/controllers/groups_controller.rb:15:in `puts'
+  app/controllers/groups_controller.rb:15:in `puts'
+  app/controllers/groups_controller.rb:15:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.2ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 07:56:25 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 7.4ms)
+
+NoMethodError (undefined method `join' for #<Class:0x007ff368deaea0>):
+  app/controllers/groups_controller.rb:15:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.6ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:00:21 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+TypeError (wrong argument type Symbol (expected Module)):
+  app/controllers/groups_controller.rb:15:in `include'
+  app/controllers/groups_controller.rb:15:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.1ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:00:40 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+TypeError (wrong argument type Class (expected Module)):
+  app/controllers/groups_controller.rb:15:in `include'
+  app/controllers/groups_controller.rb:15:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.7ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:02:11 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `group`.`state` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Mysql2::Error: Unknown column 'group.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `group`.`state` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.2ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'group.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `group`.`state` = 'confirmed' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.5ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:03:02 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `addresses` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35mGroup Load (0.5ms)[0m  SELECT `groups`.* FROM `groups` WHERE `groups`.`state` = 'approved'
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:06:08 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `group`.`state` = 'received' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Mysql2::Error: Unknown column 'group.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `group`.`state` = 'received' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'group.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `group`.`state` = 'received' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.5ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:07:44 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `group`.`state` = 'received'[0m
+Mysql2::Error: Unknown column 'group.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `group`.`state` = 'received'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.0ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'group.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `group`.`state` = 'received'):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.4ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:08:27 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `addresses`.`state` = 'received'
+Mysql2::Error: Unknown column 'addresses.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `addresses`.`state` = 'received'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.9ms)
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Unknown column 'addresses.state' in 'where clause': SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `addresses`.`state` = 'received'):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.5ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:08:53 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::ConfigurationError (Association named 'groups' was not found on Address; perhaps you misspelled it?):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (126.4ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:09:18 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::ConfigurationError (Association named 'group_id' was not found on Address; perhaps you misspelled it?):
+  app/controllers/groups_controller.rb:16:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.7ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007ff364e4bc68 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007ff364e4b920 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007ff364e48220 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:09:45 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1) AND `groups`.`state` = 'received'[0m
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:10:08 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.954995", "latitude"=>"-19.932345", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.94133821605919 AND -19.923351783940813 AND addresses.longitude BETWEEN -43.96456127593828 AND -43.94542872406171 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.932345 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.932345 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.954995 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+  [1m[36mAddress Load (0.3ms)[0m  [1mSELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1[0m
+  [1m[35mAddress Load (0.6ms)[0m  SELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1[0m
+  [1m[35mAddress Load (0.5ms)[0m  SELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1
+  [1m[36mAddress Load (0.5ms)[0m  [1mSELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1
+  [1m[36mAddress Load (0.4ms)[0m  [1mSELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1[0m
+  [1m[35mAddress Load (0.4ms)[0m  SELECT  `addresses`.* FROM `addresses`  ORDER BY `addresses`.`id` DESC LIMIT 1
+  [1m[36mGroup Load (0.5ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35mGroup Load (0.5ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35mGroup Load (0.5ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1
+  [1m[36mGroup Load (0.4ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1
+  [1m[36mGroup Load (0.5ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `groups` SET `state` = 'processing', `updated_at` = '2015-09-08 11:21:03' WHERE `groups`.`id` = 12[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `groups` SET `state` = 'approved', `updated_at` = '2015-09-08 11:21:14' WHERE `groups`.`id` = 12
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:22:46 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "longitude"=>"-43.928366", "latitude"=>"-19.914378", "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.923371216059188 AND -19.90538478394081 AND addresses.longitude BETWEEN -43.93793118869515 AND -43.91880081130484 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.914378 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.914378 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.928366 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+  [1m[35mAddress Load (0.6ms)[0m  SELECT addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.914378 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.914378 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.928366 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.928366) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.914378) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.914378) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.928366) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.923371216059188 AND -19.90538478394081 AND addresses.longitude BETWEEN -43.93793118869515 AND -43.91880081130484 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.914378 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.914378 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.928366 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC
+Completed 200 OK in 26ms (Views: 6.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 08:23:39 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
