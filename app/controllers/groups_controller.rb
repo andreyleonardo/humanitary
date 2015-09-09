@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   
   def near_groups
     user = User.new(permited_params_near_groups)
-    nearby = Address.joins(:group).where(groups: {state: "approved"}).near([user.latitude, user.longitude], 1, :units => :km)
+    nearby = Address.approved_group.near([user.latitude, user.longitude], 1, :units => :km)
     if !nearby.empty?
       render json: {nearby: nearby}, status: :ok
     else
@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
   
   private
   def permited_params_create_group
-    params.require(:group).permit(:group_name, :group_description, :responsable_name, :group_phone, :group_description, :state, addresses_attributes:[:address, :zip, :activity, :longitude, :latitude])
+    params.require(:group).permit(:group_name, :group_description, :responsable_name, :group_phone, :group_description, addresses_attributes:[:address, :zip, :activity, :longitude, :latitude])
   end
   
   def permited_params_near_groups

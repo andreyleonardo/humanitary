@@ -7407,3 +7407,195 @@ Processing by GroupsController#near_groups as */*
 Can't verify CSRF token authenticity
   [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
 Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 20:42:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (11.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (3.5ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 200 OK in 107ms (Views: 0.5ms | ActiveRecord: 16.6ms)
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 20:52:14 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `addresses` WHERE (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+  [1m[35mAddress Load (1.7ms)[0m  SELECT addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` WHERE (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC
+Completed 200 OK in 62ms (Views: 16.2ms | ActiveRecord: 11.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+
+
+Started POST "/groups/near_groups" for ::1 at 2015-09-08 21:43:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [POST] "/groups/near_groups"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (14.0ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (11.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (131.9ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fc9fc589648 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fc9fc589350 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fc9fb4adcc0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-08 21:43:26 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 4.0ms)
+
+NoMethodError (undefined method `approved_group' for #<Class:0x007fca0036c988>):
+  app/controllers/groups_controller.rb:15:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.6ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fc9fc589648 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fc9fc589350 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fc9fb4adcc0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-08 21:43:31 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `approved_group' for #<Class:0x007fca0036c988>):
+  app/controllers/groups_controller.rb:15:in `near_groups'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.6ms)
+Cannot render console with content type application/jsonAllowed content types: [#<Mime::Type:0x007fc9fc589648 @synonyms=["application/xhtml+xml"], @symbol=:html, @string="text/html">, #<Mime::Type:0x007fc9fc589350 @synonyms=[], @symbol=:text, @string="text/plain">, #<Mime::Type:0x007fc9fb4adcc0 @synonyms=[], @symbol=:url_encoded_form, @string="application/x-www-form-urlencoded">]
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-08 21:43:49 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+Completed 200 OK in 41ms (Views: 0.3ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-08 21:44:29 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+  [1m[35mAddress Load (0.7ms)[0m  SELECT addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC
+Completed 200 OK in 33ms (Views: 9.6ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:44:04 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[36m (10.6ms)[0m  [1mSELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'approved' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)[0m
+Completed 200 OK in 65ms (Views: 1.2ms | ActiveRecord: 49.5ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:44:27 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+  [1m[36mAddress Load (1.6ms)[0m  [1mSELECT `group_name`, addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 40ms (Views: 12.0ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:44:43 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+  [1m[36mAddress Load (2.0ms)[0m  [1mSELECT addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 37ms (Views: 9.0ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:44:50 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+  [1m[36mAddress Load (0.6ms)[0m  [1mSELECT `group_name`, addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 34ms (Views: 8.6ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:46:06 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+  [1m[36mAddress Load (1.0ms)[0m  [1mSELECT `group_name`, `group_description`, `responsable_name`, `group_phone`, addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 59ms (Views: 8.8ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:46:45 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+  [1m[36mAddress Load (1.9ms)[0m  [1mSELECT `group_name`, `responsable_name`, `group_phone`, addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 46ms (Views: 10.9ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-09 00:49:41 -0300
+Processing by GroupsController#create_group as */*
+  Parameters: {"group"=>{"group_name"=>"acme", "group_description"=>1, "responsable_name"=>"andrey", "group_phone"=>3184148797, "addresses_attributes"=>[{"zip"=>12345678, "activity"=>"anything", "longitude"=>-43.9222144, "latitude"=>-19.9125787}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.3ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('acme', '1', 'andrey', 3184148797, 'received', '2015-09-09 03:49:43', '2015-09-09 03:49:43')[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (12345678, 'anything', -43.9222144, -19.9125787, 'Rua Pouso Alegre, 1824 - Horto, Belo Horizonte - MG, 31015-184, Brazil', 13, '2015-09-09 03:49:43', '2015-09-09 03:49:43')
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 1408ms (Views: 0.3ms | ActiveRecord: 12.9ms)
+
+
+Started POST "/humanitary_api/near_groups" for ::1 at 2015-09-09 00:51:43 -0300
+Processing by GroupsController#near_groups as */*
+  Parameters: {"near_groups"=>{"fb_user_id"=>"1234", "latitude"=>-19.939814, "longitude"=>-43.937743, "fb_access_token"=>"1234556"}, "group"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)
+  [1m[36mAddress Load (0.6ms)[0m  [1mSELECT `group_name`, `group_description`, `responsable_name`, `group_phone`, addresses.*, 6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2))) AS distance, MOD(CAST((ATAN2( SIN( (addresses.longitude - -43.937743) / 57.2957795 ) * COS( (addresses.latitude) / 57.2957795 ), (COS( (-19.939814) / 57.2957795 ) * SIN( (addresses.latitude) / 57.2957795)) - (SIN( (-19.939814) / 57.2957795) * COS((addresses.latitude) / 57.2957795) * COS( (addresses.longitude - -43.937743) / 57.2957795))) * 57.2957795) + 360 AS decimal), 360) AS bearing FROM `addresses` INNER JOIN `groups` ON `groups`.`id` = `addresses`.`group_id` WHERE `groups`.`state` = 'received' AND (addresses.latitude BETWEEN -19.948807216059187 AND -19.93082078394081 AND addresses.longitude BETWEEN -43.94730972826197 AND -43.928176271738025 AND (6371.0 * 2 * ASIN(SQRT(POWER(SIN((-19.939814 - addresses.latitude) * PI() / 180 / 2), 2) + COS(-19.939814 * PI() / 180) * COS(addresses.latitude * PI() / 180) * POWER(SIN((-43.937743 - addresses.longitude) * PI() / 180 / 2), 2)))) BETWEEN 0.0 AND 1)  ORDER BY distance ASC[0m
+Completed 200 OK in 33ms (Views: 8.6ms | ActiveRecord: 8.2ms)
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` ASC LIMIT 1[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` ASC LIMIT 1
+  [1m[36mAddress Load (1.3ms)[0m  [1mSELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 1[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `addresses` WHERE `addresses`.`group_id` = 1[0m
+  [1m[35mGroup Load (0.4ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `addresses` WHERE `addresses`.`group_id` = 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35mGroup Load (0.5ms)[0m  SELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1
+  [1m[36mGroup Load (0.3ms)[0m  [1mSELECT  `groups`.* FROM `groups`  ORDER BY `groups`.`id` DESC LIMIT 1[0m
+  [1m[35mAddress Load (0.3ms)[0m  SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`group_id` = 13
