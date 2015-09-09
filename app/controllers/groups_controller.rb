@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
   end
   
   def near_groups
-    user = User.new(permited_params_near_groups)
+    user = User.new(permited_params_near_groups) #Used only for tests.
     nearby = Address.approved_group.near([user.latitude, user.longitude], 1, :units => :km)
     if !nearby.empty?
       render json: {nearby: nearby}, status: :ok
