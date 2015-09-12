@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
       # render json: {group: @group, addresses: @group.addresses}, status: :ok
       render json: {status: flag}, status: 200
     else
-      render json: {status: "A param is missing"}, status: 404
+      render json: {status: "thuglife13 stole a param from you."}, status: 404
     end
   end
   
@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
     if !nearby.empty?
       render json: {nearby: nearby}, status: :ok
     else
-      render json: {status: "no groups nearby"}, status: :ok
+      render json: {status: "thuglife13 is not close."}, status: :ok
     end
   end
   
