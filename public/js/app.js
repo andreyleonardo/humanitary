@@ -1,0 +1,1 @@
+var app = angular.module('humanitary', ['ui.router', 'google.places', 'ngMask']);

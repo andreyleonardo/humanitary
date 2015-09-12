@@ -1,0 +1,28 @@
+.jumbotron .address-title {
+	text-align: center;
+}
+
+.jumbotron .add-remove-entry {
+	float: right;
+	padding-right: 20%;
+}
+
+.presence {
+	padding-bottom: 50px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.register {
+	font-size: 20px;
+}
+
+.form-error {
+	color: red;
+}
+
+.form-error-border {
+	border-color: red;
+}
