@@ -43,8 +43,9 @@ function($scope, $state, $stateParams, $http){
 									"latitude":presence.address.geometry.location.G
 				                });
 			});
-
-			$http.post('http://841c1115.ngrok.io/humanitary_api/create_group', obj).
+  			
+  			// Endpoint call
+			$http.post('/humanitary_api/create_group', obj). 
 				then(function(response) {
 					alert('Criado com sucesso!');
 				}, function(response) {
