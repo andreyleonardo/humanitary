@@ -1,5 +1,5 @@
-app.controller("MainCtrl", [ '$scope', '$state', '$stateParams', '$http',
-function($scope, $state, $stateParams, $http){
+app.controller("MainCtrl", [ '$scope', '$state', '$stateParams', '$http', '$modal',
+function($scope, $state, $stateParams, $http, $modal){
 	
 	$scope.presenceList = [{address: null, activity: null}];
 
@@ -20,39 +20,75 @@ function($scope, $state, $stateParams, $http){
 								"group_name": $scope.group_name,
 								"group_description": $scope.group_description,
 								"responsable_name": $scope.responsable_name,
-								"group_phone": parseInt($scope.group_phone),
-								"group_description": $scope.group_description,
+								"group_phone": parseInt($scope.group_phone.replace(/\D/g,'')),
 								"addresses_attributes": []
 							}
-						},
-				zip = 0;
+						};
 
 			$scope.presenceList.forEach(function(presence) {
 
-				zip = 0;
-
 				if(presence.address.address_components && 
 				   presence.address.address_components.length >= 7) {
-					zip = parseInt(presence.address.address_components[6].long_name.replace(/\D/g,''))
-				}
+					console.log(presence.address);
 
-				obj.group.addresses_attributes.push({
+					var zip = parseInt(presence.address.address_components[6].long_name.replace(/\D/g,''));
+
+					if (isNaN(zip)) {
+						zip = parseInt(presence.address.address_components[7].long_name.replace(/\D/g,''));
+					}
+
+					obj.group.addresses_attributes.push({
 									"zip": zip,
 									"activity": presence.activity,
 									"longitude":presence.address.geometry.location.K,
 									"latitude":presence.address.geometry.location.G
 				                });
+				} else {
+					obj.group.addresses_attributes.push({
+									"activity": presence.activity,
+									"longitude":presence.address.geometry.location.K,
+									"latitude":presence.address.geometry.location.G
+				                });
+				}
+
+				
 			});
   			
   			// Endpoint call
 			$http.post('/humanitary_api/create_group', obj). 
 				then(function(response) {
-					alert('Criado com sucesso!');
+					$scope.successModal();
 				}, function(response) {
-					alert('Erro!');
-					console.log(response);
+					$scope.errorModal();
 				});
 		}
+	};
+
+
+	$scope.errorModal = function () {
+
+		var modalInstance = $modal.open({
+			scope: $scope,
+			templateUrl: 'error.html',
+			controller: 'MainCtrl'
+		});
+
+		$scope.close = function(){
+			modalInstance.close();
+		};
+	};
+
+	$scope.successModal = function () {
+
+		var modalInstance = $modal.open({
+			scope: $scope,
+			templateUrl: 'success.html',
+			controller: 'MainCtrl'
+		});
+
+		$scope.close = function(){
+			modalInstance.close();
+		};
 	};
 
 }]);

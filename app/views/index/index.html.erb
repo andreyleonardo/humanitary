@@ -76,8 +76,8 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="group_phone">Telefone</label>  
         <div class="col-md-4">
-        <input id="group_phone" name="group_phone" ng-model="group_phone" type="text" placeholder="Telefone" class="form-control input-md" ng-class="{'form-error-border': submitted && (groupForm.group_phone.$error.required || groupForm.group_phone.$error.minlength)}" minlength="10" required mask='(dd) dddd-dddd'>
-        <span class="form-error" ng-show="submitted && (groupForm.group_phone.$error.required || groupForm.group_phone.$error.minlength)">Obrigatório</span>  
+        <input id="group_phone" name="group_phone" ng-model="group_phone" type="text" placeholder="Telefone" class="form-control input-md" ng-class="{'form-error-border': submitted && (groupForm.group_phone.$error.required || groupForm.group_phone.$error.minlength)}" minlength="14" maxlength="15" required mask='(dd) ddddd-dddd'>
+        <span class="form-error" ng-show="submitted && (groupForm.group_phone.$error.required || groupForm.group_phone.$error.minlength || groupForm.group_phone.$error.maxlength)">Obrigatório</span>  
         </div>
       </div>
 
@@ -123,6 +123,30 @@
     </form>
     </script>
 
+    <script type="text/ng-template" id="success.html">
+        <div class="modal-header success">
+            <h3 class="modal-title">Sucesso</h3>
+        </div>
+        <div class="modal-body">
+            Grupo cadastrado com sucesso!
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" type="button" ng-click="close()">Fechar</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="error.html">
+        <div class="modal-header error">
+            <h3 class="modal-title">Erro</h3>
+        </div>
+        <div class="modal-body">
+            Erro durante o cadastro do Grupo, tente novamente!
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" type="button" ng-click="close()">Fechar</button>
+        </div>
+    </script>
+
     <!-- JQuery library -->
     <script src="assets/js/jquery-2.1.4.min.js"></script>
 
@@ -133,6 +157,9 @@
 
     <!-- Angular JS UI-Router library -->
     <script src="assets/js/angular-ui-router.min.js"></script>
+
+    <!-- Angular JS UI library -->
+    <script src="./js/ui-bootstrap-tpls-0.13.4.min.js"></script>
 
     <!-- Angular JS Geolocations library -->
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>

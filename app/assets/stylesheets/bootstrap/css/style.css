@@ -26,3 +26,13 @@
 .form-error-border {
 	border-color: red;
 }
+
+.error {
+    color: white;
+    background-color: #CC0000;
+}
+
+.success {
+    color: white;
+    background-color: #00994C;
+}
