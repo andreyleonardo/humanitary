@@ -1,1 +1,1 @@
-var app = angular.module('humanitary', ['ui.router', 'google.places', 'ngMask']);
+var app = angular.module('humanitary', ['ui.router', 'google.places', 'ngMask', 'ui.bootstrap']);
