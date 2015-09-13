@@ -9394,3 +9394,730 @@ Can't verify CSRF token authenticity
   [1m[35m (0.2ms)[0m  BEGIN
   [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
 Completed 404 Not Found in 1411ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-13 01:41:56 -0300
+
+Mysql2::Error (Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)):
+  mysql2 (0.3.20) lib/mysql2/client.rb:70:in `connect'
+  mysql2 (0.3.20) lib/mysql2/client.rb:70:in `initialize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `new'
+  activerecord (4.2.4) lib/active_record/connection_adapters/mysql2_adapter.rb:18:in `mysql2_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:438:in `new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:448:in `checkout_new_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:422:in `acquire_connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:349:in `block in checkout'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:348:in `checkout'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:263:in `block in connection'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:262:in `connection'
+  activerecord (4.2.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:571:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.2.4) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:383:in `connection'
+  activerecord (4.2.4) lib/active_record/migration.rb:370:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.4) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (152.2ms)
+
+
+Started GET "/" for ::1 at 2015-09-13 01:42:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2338ms (Views: 2327.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:13 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.min.self-9d66c8257854598a8bb867788558ea1daa20065a3fe9a827b5ed3fea25b98ba3.css?body=1" for ::1 at 2015-09-13 01:42:13 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-09-13 01:42:13 -0300
+
+
+Started GET "/assets/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/css/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/css/autocomplete.self-1c3fbc4c7fa856e32a946ca0b246eb2c36afea06704fcd73d7918ceb794adb49.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/css/style.self-9bc06f642cdae40ba1f6389b08bf641d199f313d84833887c71a1e616968b73e.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/groups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/index.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/application.self-7b12c2dc6a0df7471b90d2c83786925728878105c9c45371138e76b30d5e03f4.css?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/css/bootstrap.min.css" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/css/style.css" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/css/autocomplete.css" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/groups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/index.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.self-3769e543e3e70a65668a337fbcf6c5f69e7a6834aaf76ef74a741cb93dd5f070.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/angular.min.self-ad82b181442540ad772f10fc46a37d0d589301c74504c71a1eb970cd1730bb5f.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/app.self-e1d0e14f1072590941947b96b3805fd71aa2695f315add08e6b97eb85e1401ef.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/autocomplete.self-9d0a49933f1172c8cbd8eea69f8631538a4a709d257a5bc26cc214ab5cd14eb9.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/config.self-84fe02bfd2bb1d760501ae5785b874e79083625afa0ca79335013d968e075afb.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.self-92bfaaece1eee1e40fd3b55441ee536e7f6a03242aa5fe10e2597a27103c9dae.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/main_controller.self-284daed7a7f6dc2b099ca1a90caa53361bcde8196ec8ef8fc11184576441ea56.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/ngMask.min.self-ccf8bf7f03bcd0f4041876152f3bdffe635cc69000566c234312d0ef1c17d49b.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/ui-bootstrap-tpls-0.13.4.min.self-3caf6a75d6b951326c233b55168640e76a27537d9a7904c9e40c415837f8dff6.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/bootstrap.min.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/angular.min.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/js/ui-bootstrap-tpls-0.13.4.min.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+ActionController::RoutingError (No route matches [GET] "/js/ui-bootstrap-tpls-0.13.4.min.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (13.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (107.3ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.8ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (115.2ms)
+
+
+Started GET "/assets/js/autocomplete.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/ngMask.min.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/app.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/config.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/js/main_controller.js" for ::1 at 2015-09-13 01:42:14 -0300
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-09-13 01:42:15 -0300
+
+
+Started GET "/" for ::1 at 2015-09-13 01:42:23 -0300
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 118ms (Views: 116.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.min.self-9d66c8257854598a8bb867788558ea1daa20065a3fe9a827b5ed3fea25b98ba3.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/style.self-9bc06f642cdae40ba1f6389b08bf641d199f313d84833887c71a1e616968b73e.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/groups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/autocomplete.self-1c3fbc4c7fa856e32a946ca0b246eb2c36afea06704fcd73d7918ceb794adb49.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/index.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/application.self-7b12c2dc6a0df7471b90d2c83786925728878105c9c45371138e76b30d5e03f4.css?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/bootstrap.min.css" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/style.css" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/css/autocomplete.css" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/groups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/index.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.self-3769e543e3e70a65668a337fbcf6c5f69e7a6834aaf76ef74a741cb93dd5f070.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/angular.min.self-ad82b181442540ad772f10fc46a37d0d589301c74504c71a1eb970cd1730bb5f.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/app.self-e1d0e14f1072590941947b96b3805fd71aa2695f315add08e6b97eb85e1401ef.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/autocomplete.self-9d0a49933f1172c8cbd8eea69f8631538a4a709d257a5bc26cc214ab5cd14eb9.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/config.self-84fe02bfd2bb1d760501ae5785b874e79083625afa0ca79335013d968e075afb.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.self-92bfaaece1eee1e40fd3b55441ee536e7f6a03242aa5fe10e2597a27103c9dae.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/main_controller.self-284daed7a7f6dc2b099ca1a90caa53361bcde8196ec8ef8fc11184576441ea56.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/ngMask.min.self-ccf8bf7f03bcd0f4041876152f3bdffe635cc69000566c234312d0ef1c17d49b.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/ui-bootstrap-tpls-0.13.4.min.self-3caf6a75d6b951326c233b55168640e76a27537d9a7904c9e40c415837f8dff6.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.js" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/bootstrap.min.js" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/assets/js/angular.min.js" for ::1 at 2015-09-13 01:42:23 -0300
+
+
+Started GET "/js/ui-bootstrap-tpls-0.13.4.min.js" for ::1 at 2015-09-13 01:42:23 -0300
+
+ActionController::RoutingError (No route matches [GET] "/js/ui-bootstrap-tpls-0.13.4.min.js"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Andrey/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (89.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (66.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Andrey/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (141.6ms)
+
+
+Started GET "/assets/js/angular-ui-router.min.js" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/assets/js/autocomplete.js" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/assets/js/ngMask.min.js" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/assets/js/app.js" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/assets/js/config.js" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/assets/js/main_controller.js" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-09-13 01:42:24 -0300
+
+
+Started GET "/" for ::1 at 2015-09-13 01:43:14 -0300
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 110ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/autocomplete.self-1c3fbc4c7fa856e32a946ca0b246eb2c36afea06704fcd73d7918ceb794adb49.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.min.self-9d66c8257854598a8bb867788558ea1daa20065a3fe9a827b5ed3fea25b98ba3.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/groups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/index.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/style.self-9bc06f642cdae40ba1f6389b08bf641d199f313d84833887c71a1e616968b73e.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/application.self-7b12c2dc6a0df7471b90d2c83786925728878105c9c45371138e76b30d5e03f4.css?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/bootstrap.min.css" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/style.css" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/css/autocomplete.css" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/groups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/index.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.self-3769e543e3e70a65668a337fbcf6c5f69e7a6834aaf76ef74a741cb93dd5f070.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/angular.min.self-ad82b181442540ad772f10fc46a37d0d589301c74504c71a1eb970cd1730bb5f.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/app.self-e1d0e14f1072590941947b96b3805fd71aa2695f315add08e6b97eb85e1401ef.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/autocomplete.self-9d0a49933f1172c8cbd8eea69f8631538a4a709d257a5bc26cc214ab5cd14eb9.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/config.self-84fe02bfd2bb1d760501ae5785b874e79083625afa0ca79335013d968e075afb.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.self-92bfaaece1eee1e40fd3b55441ee536e7f6a03242aa5fe10e2597a27103c9dae.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/main_controller.self-284daed7a7f6dc2b099ca1a90caa53361bcde8196ec8ef8fc11184576441ea56.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/ngMask.min.self-ccf8bf7f03bcd0f4041876152f3bdffe635cc69000566c234312d0ef1c17d49b.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/ui-bootstrap-tpls-0.13.4.min.self-3caf6a75d6b951326c233b55168640e76a27537d9a7904c9e40c415837f8dff6.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/bootstrap.min.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/angular.min.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/ui-bootstrap-tpls-0.13.4.min.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/autocomplete.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/ngMask.min.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/app.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/config.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/js/main_controller.js" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-09-13 01:43:15 -0300
+
+
+Started GET "/" for ::1 at 2015-09-13 01:43:18 -0300
+Processing by IndexController#index as HTML
+  Rendered index/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 118ms (Views: 117.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/addresses.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/autocomplete.self-1c3fbc4c7fa856e32a946ca0b246eb2c36afea06704fcd73d7918ceb794adb49.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.self-797c795b8478a63ecf57ed925bbf6d452e951329623561a6042c306da1b713f8.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/bootstrap.self-c68c406b70db1115478355392ee8e55e46903052ef2acc9b83a09aa57ea2c0d1.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/style.self-9bc06f642cdae40ba1f6389b08bf641d199f313d84833887c71a1e616968b73e.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/bootstrap.min.self-6655d1384d1509415d234003e6f81cf5de3d688790aaadc1091aa5bb5795b1f1.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/groups.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/bootstrap-theme.min.self-9d66c8257854598a8bb867788558ea1daa20065a3fe9a827b5ed3fea25b98ba3.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/index.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/application.self-7b12c2dc6a0df7471b90d2c83786925728878105c9c45371138e76b30d5e03f4.css?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/bootstrap.min.css" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/style.css" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/css/autocomplete.css" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/addresses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/groups.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/index.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.self-3769e543e3e70a65668a337fbcf6c5f69e7a6834aaf76ef74a741cb93dd5f070.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/angular.min.self-ad82b181442540ad772f10fc46a37d0d589301c74504c71a1eb970cd1730bb5f.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/app.self-e1d0e14f1072590941947b96b3805fd71aa2695f315add08e6b97eb85e1401ef.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/autocomplete.self-9d0a49933f1172c8cbd8eea69f8631538a4a709d257a5bc26cc214ab5cd14eb9.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/bootstrap.min.self-075878ec6a19d24f3b46052eb9e0e5bb5c2a098ac50d05d8e3a21309d129273a.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/config.self-84fe02bfd2bb1d760501ae5785b874e79083625afa0ca79335013d968e075afb.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.self-92bfaaece1eee1e40fd3b55441ee536e7f6a03242aa5fe10e2597a27103c9dae.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/main_controller.self-284daed7a7f6dc2b099ca1a90caa53361bcde8196ec8ef8fc11184576441ea56.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/ngMask.min.self-ccf8bf7f03bcd0f4041876152f3bdffe635cc69000566c234312d0ef1c17d49b.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/npm.self-f66d504f2cd5bddaaade9c854b02828e5e46d225517ab9feebe1af2615566b1e.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/ui-bootstrap-tpls-0.13.4.min.self-3caf6a75d6b951326c233b55168640e76a27537d9a7904c9e40c415837f8dff6.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/users/omniauthcallbacks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/jquery-2.1.4.min.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/bootstrap.min.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/angular.min.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/angular-ui-router.min.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/ui-bootstrap-tpls-0.13.4.min.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/ngMask.min.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/autocomplete.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/app.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/config.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/js/main_controller.js" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started GET "/assets/fonts/glyphicons-halflings-regular.woff2" for ::1 at 2015-09-13 01:43:18 -0300
+
+
+Started POST "/humanitary_api/create_group" for ::1 at 2015-09-13 01:44:28 -0300
+Processing by GroupsController#create_group as HTML
+  Parameters: {"group"=>{"group_name"=>"teste", "group_description"=>"Testando", "responsable_name"=>"Andrey", "group_phone"=>31313131313, "addresses_attributes"=>[{"activity"=>"Qualquer coisa", "longitude"=>-43.94419340000002, "latitude"=>-19.9268679}, {"zip"=>30111020, "activity"=>"Testando isso", "longitude"=>-43.94087760000002, "latitude"=>-19.9140334}]}}
+Can't verify CSRF token authenticity
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO `groups` (`group_name`, `group_description`, `responsable_name`, `group_phone`, `state`, `created_at`, `updated_at`) VALUES ('teste', 'Testando', 'Andrey', 31313131313, 'received', '2015-09-13 04:44:29', '2015-09-13 04:44:29')[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `addresses` (`activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES ('Qualquer coisa', -43.94419340000002, -19.9268679, 'Rua dos Aimorés, 2125 - Lourdes, Belo Horizonte - MG, Brazil', 21, '2015-09-13 04:44:29', '2015-09-13 04:44:29')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `addresses` (`zip`, `activity`, `longitude`, `latitude`, `address`, `group_id`, `created_at`, `updated_at`) VALUES (30111020, 'Testando isso', -43.94087760000002, -19.9140334, 'R. Saturnino de Brito, 28-104 - Centro, Belo Horizonte - MG, 30111-020, Brazil', 21, '2015-09-13 04:44:29', '2015-09-13 04:44:29')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 1351ms (Views: 0.4ms | ActiveRecord: 11.8ms)
