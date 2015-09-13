@@ -1,5 +1,5 @@
 class Address < ActiveRecord::Base
-  # validates :activity, :longitude, :latitude, presence: true
+  validates :activity, :longitude, :latitude, presence: true
   belongs_to :group
   reverse_geocoded_by :latitude, :longitude
   after_validation :reverse_geocode  
