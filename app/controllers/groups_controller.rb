@@ -1,4 +1,5 @@
-class GroupsController < ApplicationController  
+class GroupsController < ApplicationController 
+   
   def create_group
     @group = Group.new(permited_params_create_group)
     flag=@group.save   

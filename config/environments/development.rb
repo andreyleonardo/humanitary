@@ -57,6 +57,5 @@ Rails.application.configure do
     password: 'somepass',
     authentication: :plain,
     domain: 'somedomain.com'
-  }
-    
+  }    
 end
