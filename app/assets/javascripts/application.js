@@ -13,14 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require js/jquery-2.1.4.min.js
-//= require js/bootstrap.min.js
-//= require js/angular.min.js
-//= require js/angular-ui-router.min.js
-
-//= require js/autocomplete.js
-//= require js/ngMask.min.js
-//= require js/app.js
-//= require js/config.js
-//= require js/main_controller.js
 //= require_tree .
