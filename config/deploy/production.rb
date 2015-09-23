@@ -1,4 +1,5 @@
 set :stage, :production
+server 'humanitary.cloudapp.net', user: 'deploy', roles: %w{web app}
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary
