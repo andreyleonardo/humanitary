@@ -1,6 +1,6 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
-server '40.122.174.219', port: 80, roles: [:web, :app, :db], primary: true
+server '40.122.174.219', roles: [:web, :app, :db], primary: true
 
 set :application, 'humanitary'
 set :repo_url, 'git@github.com:dreyxvx/humanitary.git'
