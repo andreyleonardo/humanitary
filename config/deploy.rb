@@ -28,7 +28,7 @@ set :branch, 'master'
 # set :log_level, :debug
 
 # Default value for :pty is false
-set :pty,             true
+set :pty,             false
 set :use_sudo,        false
 set :stage,           :production
 set :deploy_via,      :remote_cache
