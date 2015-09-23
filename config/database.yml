@@ -20,7 +20,7 @@ production:
   pool:  32
   username:  root
   password:  Thu6LiF3157
-  # host:  
+  host: localhost
 
 
 # Warning: The database defined as "test" will be erased and
