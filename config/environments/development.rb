@@ -39,10 +39,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-  
-  # TODO CONFIGURE APP DOMAIN
   # General Settings
-  config.app_domain = 'somedomain.com'
+  config.app_domain = 'humanitary.cloudapp.net'
   
   # TODO CONFIGURE MAIL SERVER
   # Email
