@@ -11,4 +11,7 @@
  * file per style scope.
  *= require_tree .
  *= require_self
+ *= require css/bootstrap.min.css
+ *= require css/style.css
+ *= require css/autocomplete.css
  */
