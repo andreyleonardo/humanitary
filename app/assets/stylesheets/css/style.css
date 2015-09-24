@@ -36,3 +36,8 @@
     color: white;
     background-color: #00994C;
 }
+
+//= depend_on_asset "logo.jpg"
+.logo {
+  background-image:url('<%= asset_path("logo.jpg") %> ');
+}
