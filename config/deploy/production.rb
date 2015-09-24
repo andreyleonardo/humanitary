@@ -6,9 +6,9 @@ server 'humanitary.cloudapp.net', user: 'deploy', roles: %w{web app}
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{deploy@40.122.174.219}
-role :web, %w{deploy@40.122.174.219}
-role :db,  %w{deploy@40.122.174.219}
+role :app, %w{deploy@humanitary.cloudapp.net}
+role :web, %w{deploy@humanitary.cloudapp.net}
+role :db,  %w{deploy@humanitary.cloudapp.net}
 
 # Extended Server Syntax
 # ======================

@@ -1,13 +1,10 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
-server 'humanitary.cloudapp.net', port: 22, primary: true
+# server 'humanitary.cloudapp.net', port: 22, primary: true
 
 set :application, 'humanitary'
 set :repo_url, 'git@github.com:dreyxvx/humanitary.git'
 set :user, 'deploy'
-
-set :rbenv_type, :user
-set :rbenv_ruby, '2.2.1'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
@@ -34,10 +31,10 @@ set :deploy_to,       "/home/#{fetch(:user)}/apps/"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml}
+# set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
