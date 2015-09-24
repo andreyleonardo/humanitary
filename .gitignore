@@ -1,5 +1,7 @@
+/.bundle
 config/database.yml
 config/secrets.yml
 .DS_Store
 /log/*
+!/log/.keep
 /tmp/*
