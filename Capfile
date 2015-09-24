@@ -15,17 +15,12 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/rails
 #
 # require 'capistrano/rvm'
-require 'capistrano/rails'
 require 'capistrano/rbenv'
 set :rbenv_type, :user
 set :rbenv_ruby, '2.2.1'
-# require 'capistrano/chruby'
 require 'capistrano/bundler'
-# require 'capistrano/rails/assets'
-# require 'capistrano/rails/migrations'
-
-# require 'capistrano/puma'
-# require 'capistrano/puma/nginx'
+require 'capistrano/rails'
+require 'capistrano/passenger'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
