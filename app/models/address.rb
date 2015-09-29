@@ -6,6 +6,6 @@ class Address < ActiveRecord::Base
   
   protected
   def self.approved_group
-    self.select(:group_name, :group_description, :responsable_name, :group_phone).joins(:group).where(groups: {state: "approved"})
+    self.select(:group_name, :group_description, :responsable_name, :group_phone).joins(:group).where(groups: {state: "received"})
   end  
 end
