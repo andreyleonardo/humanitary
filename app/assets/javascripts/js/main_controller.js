@@ -40,14 +40,14 @@ function($scope, $state, $stateParams, $http, $modal){
 					obj.group.addresses_attributes.push({
 									"zip": zip,
 									"activity": presence.activity,
-									"longitude":presence.address.geometry.location.K,
-									"latitude":presence.address.geometry.location.G
+									"longitude":presence.address.geometry.location.L,
+									"latitude":presence.address.geometry.location.H
 				                });
 				} else {
 					obj.group.addresses_attributes.push({
 									"activity": presence.activity,
-									"longitude":presence.address.geometry.location.K,
-									"latitude":presence.address.geometry.location.G
+									"longitude":presence.address.geometry.location.L,
+									"latitude":presence.address.geometry.location.H
 				                });
 				}
 
