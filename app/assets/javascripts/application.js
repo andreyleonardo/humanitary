@@ -22,5 +22,7 @@
 //= require js/ngMask.min.js
 //= require js/app.js
 //= require js/config.js
-//= require js/main_controller.js		
+//= require js/menu_controller.js
+//= require js/main_controller.js
+//= require js/form_controller.js		
 //= require_tree .

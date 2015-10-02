@@ -6,6 +6,12 @@ app.config(['$locationProvider','$stateProvider', '$urlRouterProvider',
 			url: '/',
 			templateUrl: '/home.html',
 			controller: 'MainCtrl'
+		})
+
+		.state('form', {
+			url: '/form',
+			templateUrl: '/form.html',
+			controller: 'FormCtrl'
 		});
 
 	$urlRouterProvider.otherwise('/');
