@@ -27,35 +27,32 @@ function($scope, $state, $stateParams, $http, $modal){
 
 			$scope.presenceList.forEach(function(presence) {
 
-				if(presence.address.address_components && 
-				   presence.address.address_components.length >= 7) {
-					console.log(presence.address);
+				if(presence.address.address_components &&
+					presence.address.address_components.length >= 7) {
 
-					var zip = parseInt(presence.address.address_components[6].long_name.replace(/\D/g,''));
+						var zip = parseInt(presence.address.address_components[6].long_name.replace(/\D/g,''));
 
-					if (isNaN(zip)) {
-						zip = parseInt(presence.address.address_components[7].long_name.replace(/\D/g,''));
-					}
+						if (isNaN(zip)) {
+							zip = parseInt(presence.address.address_components[7].long_name.replace(/\D/g,''));
+						}
 
-					obj.group.addresses_attributes.push({
+						obj.group.addresses_attributes.push({
 									"zip": zip,
 									"activity": presence.activity,
-									"longitude":presence.address.geometry.location.L,
-									"latitude":presence.address.geometry.location.H
-				                });
-				} else {
-					obj.group.addresses_attributes.push({
+									"longitude": presence.address.geometry.location.lng(),
+									"latitude": presence.address.geometry.location.lat()
+						});
+					} else {
+						obj.group.addresses_attributes.push({
 									"activity": presence.activity,
-									"longitude":presence.address.geometry.location.L,
-									"latitude":presence.address.geometry.location.H
-				                });
-				}
-
-				
+									"longitude": presence.address.geometry.location.lng(),
+									"latitude": presence.address.geometry.location.lat()
+						});
+					}
 			});
-  			
+
   			// Endpoint call
-			$http.post('/humanitary_api/create_group', obj). 
+			$http.post('/humanitary_api/create_group', obj).
 				then(function(response) {
 					$scope.successModal();
 				}, function(response) {
