@@ -1,5 +1,5 @@
-app.controller("FormCtrl", [ '$scope', '$state', '$stateParams', '$http', '$modal',
-function($scope, $state, $stateParams, $http, $modal){
+app.controller("FormCtrl", [ '$scope', '$state', '$stateParams', '$http', '$modal', '$window',
+function($scope, $state, $stateParams, $http, $modal, $window){
 
 	$scope.presenceList = [{address: null, activity: null}];
 
@@ -61,6 +61,11 @@ function($scope, $state, $stateParams, $http, $modal){
 		}
 	};
 
+	$scope.reloadForm = function() {
+		console.log('reload');
+		$window.location.reload();
+	};
+
 
 	$scope.errorModal = function () {
 
@@ -85,6 +90,7 @@ function($scope, $state, $stateParams, $http, $modal){
 
 		$scope.close = function(){
 			modalInstance.close();
+			$scope.reloadForm();
 		};
 	};
 
